@@ -264,4 +264,4 @@ sudo journalctl -u cosmos -f
 4.  Persistent peer issue solved by pasting the peers in this section into the p2p section of config.toml [Configure Persistent Peers](#configure-persistent-peers)
 5.  Edit cosmos.service to set Restart to `on-failure` and LimitNOFile to `infinity` and ```sudo systemctl daemon-reload```
 6.  Check external iPv4 address with ```curl -4 ifconfig.me``` and set it in config.toml ```external address``` parameter.
-7.  Remove problematic persitent peers that keep disconnecting, we have 91 peers and can remove bad peers.
+7.  In config.toml, remove problematic persitent peers that keep disconnecting (we had set 91 peers, so identify bad ones in the log and remove them).
