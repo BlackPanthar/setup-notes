@@ -20,6 +20,13 @@ Chain ID: cosmoshub-4 | Current Node Version: v18.1.0
    - [Start Node Service](#start-node-service)
 7. [Troubleshooting after starting Node](#troubleshooting-after-starting-node)
 
+## Introduction
+
+This is a guide to install and troubleshoot a Gaia node from scratch.
+
+## Prerequisites
+
+Update packages, ready server for installation and install Go.
 
 ## Install and Configure Go
 
@@ -256,4 +263,5 @@ sudo journalctl -u cosmos -f
 3.  Seed issue solved by adding this section to the p2p section of config.toml: [Configure Seed](#configure-seed)
 4.  Persistent peer issue solved by pasting the peers in this section into the p2p section of config.toml [Configure Persistent Peers](#configure-persistent-peers)
 5.  Edit cosmos.service to set Restart to `on-failure` and LimitNOFile to `infinity` and ```sudo systemctl daemon-reload```
-6.  check external iPv4 address with ```curl -4 ifconfig.me``` and set it in config.toml ```external address``` parameter.
+6.  Check external iPv4 address with ```curl -4 ifconfig.me``` and set it in config.toml ```external address``` parameter.
+7.  Remove problematic persitent peers that keep disconnecting, we have 91 peers and can remove bad peers.
