@@ -24,9 +24,11 @@ Chain ID: cosmoshub-4 | Current Node Version: v18.1.0
 
 This is a guide to install and troubleshoot a Gaia node from scratch.
 
+
 ## Prerequisites
 
 Update packages, ready server for installation and install Go.
+
 
 ## Install and Configure Go
 
@@ -86,6 +88,7 @@ make install
 gaiad init USL_COSMOS --chain-id cosmoshub-4
 ```
 
+
 ### Download Genesis
 
 The genesis file link below is Polkachu's mirror download. The best practice is to find the official genesis download link.
@@ -95,6 +98,7 @@ wget -O genesis.json https://snapshots.polkachu.com/genesis/cosmos/genesis.json 
 mv genesis.json ~/.gaia/config
 ```
 
+
 ### Configure Seed
 
 Using a seed node to bootstrap is one of the best practices to boostrap a node. 
@@ -103,8 +107,8 @@ Using a seed node to bootstrap is one of the best practices to boostrap a node.
 sed -i 's/seeds = ""/seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:14956"/' ~/.gaia/config/config.toml
 ```
 
-### Configure Address Book
 
+### Configure Address Book
 
 Sometimes node operators will face peering issues with the rest of the network. Often it can be solved with a good seed node or a list of stable persistent peers.However, when everything else fails, you can choose to trust the below `addrbook.json` file to bootstrap your node's connection with the network. Stop your node, download and replace your `addrbook.json` with the steps below, and restart your node.
 
@@ -115,6 +119,9 @@ mv addrbook.json ~/.gaia/config
 ```
 
 Reference:  [addrbook](https://www.polkachu.com/addrbooks/cosmos) 
+
+
+
 
 ### Configure Persistent Peers
 
@@ -132,6 +139,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.g
 
 ```
 Reference: [persistent\_peers](https://www.polkachu.com/live_peers/cosmos).
+
 
 
 ## Node Launch
@@ -160,6 +168,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 ```
+
 
 ### CosmosHub Snapshot Server Setup
 
@@ -231,6 +240,7 @@ cp ~/.gaia/priv_validator_state.json  ~/.gaia/data/priv_validator_state.json
 ```
 
 If everything is good, now restart your node
+
 
 ### Start Node Service
 
