@@ -268,10 +268,10 @@ sudo journalctl -u cosmos -f
 
 ## Troubleshooting after starting Node
 
-1. Set min gas price in app.toml: We fixed this by setting it to 0.025uatom standard value.
+1. Set ```min gas price``` in ```app.toml```: We fixed this by setting it to ```0.025uatom``` standard value.
 2. Address book issue: steps to solve added to this section: [Configure Address Book](#configure-address-book)
-3.  Seed issue solved by adding this section to the p2p section of config.toml: [Configure Seed](#configure-seed)
-4.  Persistent peer issue solved by pasting the peers in this section into the p2p section of config.toml [Configure Persistent Peers](#configure-persistent-peers)
-5.  Edit cosmos.service to set Restart to `on-failure` and LimitNOFile to `infinity` and ```sudo systemctl daemon-reload```
-6.  Check external iPv4 address with ```curl -4 ifconfig.me``` and set it in config.toml ```external address``` parameter.
-7.  In config.toml, remove problematic persitent peers that keep disconnecting (we had set 91 peers, so identify bad ones in the log and remove them).
+3.  Seed issue solved by adding this section to the p2p section of ```config.toml```: [Configure Seed](#configure-seed)
+4.  Persistent peer issue solved by pasting the peers in this section into the p2p section of ```config.toml``` [Configure Persistent Peers](#configure-persistent-peers)
+5.  Edit ```cosmos.service``` to set Restart to `on-failure` and LimitNOFile to `infinity` and ```sudo systemctl daemon-reload```
+6.  Check external iPv4 address with ```curl -4 ifconfig.me``` and set it in ```config.toml```specifically the ```external address``` parameter.
+7.  In ```config.toml```, remove problematic persitent peers that keep disconnecting (we had set 91 peers, so identify bad ones in the log and remove them).
