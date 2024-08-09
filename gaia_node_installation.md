@@ -58,7 +58,7 @@ Close `~/.profile` file and run:
 source ~/.profile
 ```
 
-## Install Node
+## Node Installation
 
 Install the current version of node binary.
 
@@ -69,7 +69,7 @@ git checkout v18.1.0
 make install
 ```
 
-## Configure Node
+## Node Configuration
 
 #### Initialize Node
 
@@ -127,7 +127,7 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.g
 Reference: [persistent\_peers](https://www.polkachu.com/live_peers/cosmos).
 
 
-## Launch Node
+## Node Launch
 
 #### Create Service File
 
