@@ -18,7 +18,7 @@ Chain ID: cosmoshub-4 | Current Node Version: v18.1.0
    - [CosmosHub Snapshot Server Setup](#cosmoshub-snapshot-server-setup)
    - [How to Process CosmosHub Snapshot](#how-to-process-cosmoshub-snapshot)
    - [Start Node Service](#start-node-service)
-7. [Monitoring and Maintenance](#monitoring-and-maintenance)
+7. [Troubleshooting after starting Node](#troubleshooting-after-starting-node)
 
 
 ## Install and Configure Go
