@@ -32,7 +32,7 @@ Update packages, ready server for installation and install Go.
 
 Skip this step if you already have Go.
 
-#### Install Go
+### Install Go
 
 We will use Go `v1.21.1` as example here. The code below also cleanly removes any previous Go installation.
 
@@ -43,7 +43,7 @@ sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
 rm go1.21.1.linux-amd64.tar.gz
 ```
 
-#### Configure Go
+### Configure Go
 
 Unless you want to configure in a non-standard way, then set these in the `~/.profile` file.
 
@@ -78,7 +78,7 @@ make install
 
 ## Node Configuration
 
-#### Initialize Node
+### Initialize Node
 
  You can use `USL_COSMOS` as your moniker.
 
@@ -86,7 +86,7 @@ make install
 gaiad init USL_COSMOS --chain-id cosmoshub-4
 ```
 
-#### Download Genesis
+### Download Genesis
 
 The genesis file link below is Polkachu's mirror download. The best practice is to find the official genesis download link.
 
@@ -95,7 +95,7 @@ wget -O genesis.json https://snapshots.polkachu.com/genesis/cosmos/genesis.json 
 mv genesis.json ~/.gaia/config
 ```
 
-#### Configure Seed
+### Configure Seed
 
 Using a seed node to bootstrap is one of the best practices to boostrap a node. 
 
@@ -103,7 +103,7 @@ Using a seed node to bootstrap is one of the best practices to boostrap a node.
 sed -i 's/seeds = ""/seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:14956"/' ~/.gaia/config/config.toml
 ```
 
-#### Configure Address Book
+### Configure Address Book
 
 
 Sometimes node operators will face peering issues with the rest of the network. Often it can be solved with a good seed node or a list of stable persistent peers.However, when everything else fails, you can choose to trust the below `addrbook.json` file to bootstrap your node's connection with the network. Stop your node, download and replace your `addrbook.json` with the steps below, and restart your node.
@@ -116,7 +116,7 @@ mv addrbook.json ~/.gaia/config
 
 Reference:  [addrbook](https://www.polkachu.com/addrbooks/cosmos) 
 
-#### Configure Persistent Peers
+### Configure Persistent Peers
 
 Using Persistent Peers to bootstrap is the best practice. Here is a list of 91 active peers as observed by Polkachu's state-sync server in real-time. Add them to your `config.toml` if you have trouble finding peers.
 
@@ -136,7 +136,7 @@ Reference: [persistent\_peers](https://www.polkachu.com/live_peers/cosmos).
 
 ## Node Launch
 
-#### Create Service File
+### Create Service File
 
 Create a `cosmos.service` file in the `/etc/systemd/system` folder with the following code snippet. Make sure to replace `USER` with your Linux user name. You need sudo previlege to do this step.
 
@@ -161,7 +161,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 ```
 
-#### CosmosHub Snapshot Server Setup
+### CosmosHub Snapshot Server Setup
 
 Snapshot providers usauallly take one node snapshot every day. Identify a good provider like Polkachu. The snapshot is designed for node opeartors to run an efficient node on CosmosHub chain. To make the snapshot as small as possible while still viable as a validator, the following settings are used to save on the disk space. It might be helpful for you to sync with a snapshot periodically because Tendermint chain storage grows over time regardless of the pruning.
 
@@ -232,7 +232,7 @@ cp ~/.gaia/priv_validator_state.json  ~/.gaia/data/priv_validator_state.json
 
 If everything is good, now restart your node
 
-#### Start Node Service
+### Start Node Service
 
 ```
 # Enable service
