@@ -81,6 +81,7 @@ You’ll need to:
 a.  **Upload your code**: Use`scp`or any other file transfer method to move your smart contract`.wasm`file to the server.
    ```
 scp ./path_to_your_wasm_file.wasm your_username@your_server_ip:/path_on_server/
+
 ```
 
 b.  **Deploy the Contract**: Use the`wasmd`CLI on your server to deploy the contract.
@@ -98,5 +99,6 @@ If you want to interact with`wasmd`running on your remote server from your local
 
 You can then interact with the node using the RPC endpoint:  
 ```
-wasmd query wasm contract-state smart <contract_address> '{"get_count":{}}' --node
+wasmd query wasm contract-state smart <contract_address> '{"get_count":{}}' --node http://your_server_ip:26657
+
 ```
