@@ -75,19 +75,24 @@ cosmwasm/wasmd:latest /opt/run_wasmd.sh `       ``
 ## 5. **Deploying and Testing Smart Contracts**
 
 
-After setting up`wasmd`on your remote server, you can deploy and test your smart contracts similarly to how you would locally. You’ll need to:  
+After setting up`wasmd`on your remote server, you can deploy and test your smart contracts similarly to how you would locally. 
+You’ll need to:  
+
 a.  **Upload your code**: Use`scp`or any other file transfer method to move your smart contract`.wasm`file to the server.
    ```
 scp ./path_to_your_wasm_file.wasm your_username@your_server_ip:/path_on_server/
 ```
+
 b.  **Deploy the Contract**: Use the`wasmd`CLI on your server to deploy the contract.
 ```
 wasmd tx wasm store /path_on_server/your_contract.wasm --from your_wallet_name --gas auto --fees 1000ucosm --node http://localhost:26657
 ```
+
 c.  **Interact with the Contract**:
    Instantiate, execute, and query the contract as needed using the`wasmd`CLI, just like you would locally.        ``
 
-## 5. **Setting Up Remote Access**
+
+## 6. **Setting Up Remote Access**
 
 If you want to interact with`wasmd`running on your remote server from your local machine, make sure to configure your firewall to allow access to the necessary ports (e.g., 26657 for RPC). 
 
