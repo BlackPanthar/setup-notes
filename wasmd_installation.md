@@ -1,20 +1,20 @@
 
-## Install Rust
-Ensure Go is installed first.
+## 1. Install Rust
+Ensure Go is installed first. Then install Rust.
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh source $HOME/.cargo/env
 ```
 
-## 1. Install cargo-generate for scaffolding contracts 
+## 2. Install cargo-generate for scaffolding contracts 
 ```
 cargo install cargo-generate
 ```
-## 2. Install wasm-opt for optimizing your contracts 
+## 3. Install wasm-opt for optimizing your contracts 
 ```
 sudo apt-get install binaryen 
 ```
 
-## 3. **Setting Up `wasmd` on the Remote Server**
+## 4. **Setting Up `wasmd` on the Remote Server**
 
 
 You have two main options for setting up `wasmd`:
@@ -22,7 +22,7 @@ You have two main options for setting up `wasmd`:
 a.  **Manual Installation**: Compile `wasmd` directly on your server.
 b.  **Using Docker**: Run `wasmd` in a Docker container.
 
-# **Option 1: Manual Installation**
+# **Installation Option 1: Manual**
 
 
 ### Clone the wasmd repository 
@@ -47,7 +47,7 @@ wasmd init mynode --chain-id mychain
 wasmd start
 ```
 
-# **Option 2: Using Docker**
+# **Installation Option 2: Using Docker**
 
 
 If Docker is installed on your server, you can pull and run the`wasmd`Docker image:    
@@ -71,7 +71,8 @@ docker run --rm -it -p 26657:26657 -p 26656:26656 -p 1317:1317 \
 cosmwasm/wasmd:latest /opt/run_wasmd.sh `       ``
 ```
 
-## 4. **Deploying and Testing Smart Contracts**
+
+## 5. **Deploying and Testing Smart Contracts**
 
 
 After setting up`wasmd`on your remote server, you can deploy and test your smart contracts similarly to how you would locally. You’ll need to:  
