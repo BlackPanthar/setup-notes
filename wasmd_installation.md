@@ -86,7 +86,7 @@ scp ./path_to_your_wasm_file.wasm your_username@your_server_ip:/path_on_server/
 
 b.  **Deploy the Contract**: Use the`wasmd`CLI on your server to deploy the contract.
 ```
-wasmd tx wasm store /path_on_server/your_contract.wasm --from your_wallet_name --gas auto --fees 1000ucosm --node http://localhost:26657
+wasmd tx wasm store /path_on_server/your_contract.wasm --from your_wallet_name --gas auto --fees 1000uatom --node http://localhost:26657
 ```
 
 c.  **Interact with the Contract**:
