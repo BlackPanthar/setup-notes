@@ -22,7 +22,7 @@ You have two main options for setting up `wasmd`:
 a.  **Manual Installation**: Compile `wasmd` directly on your server.
 b.  **Using Docker**: Run `wasmd` in a Docker container.
 
-#### **Option 1: Manual Installation**
+# **Option 1: Manual Installation**
 
 
 ### Clone the wasmd repository 
@@ -47,7 +47,7 @@ wasmd init mynode --chain-id mychain
 wasmd start
 ```
 
-#### **Option 2: Using Docker**
+# **Option 2: Using Docker**
 
 
 If Docker is installed on your server, you can pull and run the`wasmd`Docker image:    
